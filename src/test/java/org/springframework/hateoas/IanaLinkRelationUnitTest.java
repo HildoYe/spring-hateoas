@@ -16,7 +16,6 @@
 package org.springframework.hateoas;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import lombok.Value;
 
@@ -108,7 +107,7 @@ class IanaLinkRelationUnitTest {
 				.map(String.class::cast) //
 				.collect(Collectors.toSet());
 
-		assertEquals(linkRelations, stringConstants);
+		assertThat(linkRelations).containsExactlyElementsOf(stringConstants);
 	}
 
 	/**
